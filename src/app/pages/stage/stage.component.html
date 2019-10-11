@@ -7,6 +7,11 @@
   <app-stage-view *ngIf="!openStore; else store" (increase)="increaseCurrency()"></app-stage-view>
 
   <ng-template #store>
-    <app-stage-store (purchase)="commitPurchase($event)"  [inventory]="inventory" [currency]="currency"></app-stage-store>
+    <app-stage-store
+      (purchase)="commitPurchase($event)"
+      [currency]="currency"
+      [facilities]="facilities"
+      [upgrades]="upgrades"
+    ></app-stage-store>
   </ng-template>
 </div>
