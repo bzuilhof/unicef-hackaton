@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import Inventory from '../../../models/inventory';
 import Upgrade from '../../../models/Upgrade';
 import Facility from '../../../models/Facility';
 
@@ -10,7 +9,6 @@ import Facility from '../../../models/Facility';
 })
 export class StageStoreComponent implements OnInit {
 
-  @Input() inventory: Inventory;
   @Input() upgrades: Upgrade[];
   @Input() facilities: Facility[];
   @Input() currency: number;
