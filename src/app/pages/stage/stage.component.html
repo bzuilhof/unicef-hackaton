@@ -7,6 +7,9 @@
   <div class="progress">
     <div class="progress-bar bg-unicef" role="progressbar" [ngStyle]="{'width.%': getProgress()}">Level {{getLevel()}}</div>
   </div>
+  <div class="level-name-container">
+    <p class="level-name-p">Syrië</p>
+  </div>
   <app-stage-view *ngIf="!openStore; else store" (increase)="increaseCurrency()"></app-stage-view>
 
   <ng-template #store>
