@@ -1,5 +1,7 @@
 .level-selection {
   height: 100vh;
+  touch-action: manipulation;
+
   #world_map {
     height: 100vh;
 
@@ -7,20 +9,20 @@
 
   #bahamas {
     position: absolute;
-    top: 46%;
-    left: 280px;
+    top: 40%;
+    left: 306px;
   }
 
   #jemen {
     position: absolute;
-    top: 46%;
-    left: 590px;
+    top: 41%;
+    left: 660px;
   }
 
   #syria {
     position: absolute;
-    top: 40%;
-    left: 560px;
+    top: 33%;
+    left: 620px;
   }
 }
 
