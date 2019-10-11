@@ -4,14 +4,17 @@
     <div class="wallet float-right">{{currency}} x<img src="assets/images/{{currencyImage}}" class="currency-image" alt="image"></div>
     <div class="wallet float-right" (click)="buyCoins()">{{coin_currency}} x<img src="../../../assets/images/unicefcoin.png" class="currency-image" alt="image"></div>
   </div>
+  <div class="progress">
+    <div class="progress-bar bg-success" role="progressbar" [ngStyle]="{'width.%': getProgress()}"></div>
+  </div>
   <app-stage-view *ngIf="!openStore; else store" (increase)="increaseCurrency()"></app-stage-view>
 
   <ng-template #store>
     <app-stage-store
       (purchase)="commitPurchase($event)"
       [currency]="currency"
-      [facilities]="facilities"
-      [upgrades]="upgrades"
+      [facilities]="getAvailableFacilities()"
+      [upgrades]="getAvailableUpgrades()"
     ></app-stage-store>
   </ng-template>
 </div>
