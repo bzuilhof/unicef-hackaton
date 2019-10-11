@@ -1,3 +1,6 @@
-<div class="space">
-<img class="earth" src="../../../assets/images/earth.png" alt="earth">
+<div class="space" (click)="clicked()">
+  <div *ngIf="!zoomEarth">
+  <img [@fade]="fade" class="earth" src="../../../assets/images/earth.png" alt="earth">
+  </div>
+  <img *ngIf="zoomEarth" class="earth" src="../../../assets/images/earth.png" alt="earth">
 </div>

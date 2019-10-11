@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LevelSelectionComponent } from './pages/level-selection/level-selection.component';
 import { StageComponent } from './pages/stage/stage.component';
 import { EarthComponent } from './pages/earth/earth.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EarthComponent } from './pages/earth/earth.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
