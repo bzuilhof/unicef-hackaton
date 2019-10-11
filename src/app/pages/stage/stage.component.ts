@@ -5,6 +5,7 @@ import {BuyCoinsComponent} from './buy-coins/buy-coins.component';
 import Deal from '../../models/deal';
 import Upgrade from '../../models/Upgrade';
 import Facility from '../../models/Facility';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-stage',
@@ -35,6 +36,7 @@ export class StageComponent implements OnInit {
   openStore = false;
 
   constructor(
+    private router: Router,
     public dialog: MatDialog
   ) { }
 
@@ -103,5 +105,8 @@ export class StageComponent implements OnInit {
         this.coinCurrency += deal.coins;
       }
     });
+  }
+  private onBackPressed() {
+    this.router.navigateByUrl('level-selection');
   }
 }
