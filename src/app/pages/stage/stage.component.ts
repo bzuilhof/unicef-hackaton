@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StageComponent implements OnInit {
 
+  currency = 0;
+  currencyImage = 'drop.png';
+  assetImage = 'pump.jpg';
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  increaseCurrency() {
+    this.currency++;
+  }
 }
