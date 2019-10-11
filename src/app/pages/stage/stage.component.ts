@@ -109,4 +109,8 @@ export class StageComponent implements OnInit {
   private onBackPressed() {
     this.router.navigateByUrl('level-selection');
   }
+
+  private goToExpedition() {
+    this.router.navigateByUrl('expedition');
+  }
 }

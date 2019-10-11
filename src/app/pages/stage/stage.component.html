@@ -1,6 +1,6 @@
 <div class="field">
   <div class="header">
-    <div (click)="onBackPressed()" class="button button__back-button float-left"><img src="../../../assets/images/icon-arrow-left.svg"></div>
+    <div *ngIf="!openStore" (click)="onBackPressed()" class="button button__back-button float-left"><img src="../../../assets/images/icon-arrow-left.svg"></div>
     <div class="wallet float-right">{{currency}} x<img src="assets/images/{{currencyImage}}" class="currency-image" alt="image"></div>
     <div class="wallet float-right" (click)="buyCoins()">{{coinCurrency}} x<img src="../../../assets/images/unicefcoin.png" class="currency-image" alt="image"></div>
   </div>
@@ -25,7 +25,11 @@
 
       <br>{{openStore ? 'TERUG' : 'WINKEL'}}
     </button>
-    <button class="button"><i class="fas fa-city"></i>BOEDEL</button>
-    <button class="button"><i class="fas fa-puzzle-piece"></i>EXPEDITIE</button>
+    <button class="button">
+      <i class="fas fa-city"></i>BOEDEL
+    </button>
+    <button class="button" (click)="goToExpedition()">
+      <i class="fas fa-puzzle-piece"></i>EXPEDITIE
+    </button>
   </div>
 </div>
