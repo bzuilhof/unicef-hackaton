@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LevelSelectionComponent } from './pages/level-selection/level-selection.component';
 import { StageComponent } from './pages/stage/stage.component';
 import { EarthComponent } from './pages/earth/earth.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { StageViewComponent } from './pages/stage/stage-view/stage-view.component';
 import { StageStoreComponent } from './pages/stage/stage-store/stage-store.component';
 
@@ -20,7 +21,8 @@ import { StageStoreComponent } from './pages/stage/stage-store/stage-store.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -25,19 +25,19 @@ export class StageComponent implements OnInit {
   ngOnInit() {
   }
 
-  calcIncrement() {
+  private calcIncrement() {
     this.increment = this.inventory.pumpServants * 2 + this.inventory.pumpUpgrades * 10;
   }
 
-  toggleStore() {
+  private toggleStore() {
     this.openStore = !this.openStore;
   }
 
-  increaseCurrency() {
+  private increaseCurrency() {
     this.currency += this.increment;
   }
 
-  commitPurchase(purchaseEvent: PurchaseEvent) {
+  private commitPurchase(purchaseEvent: PurchaseEvent) {
     this.currency -= purchaseEvent.cost;
     this.inventory[purchaseEvent.upgradeType]++;
     this.calcIncrement();
