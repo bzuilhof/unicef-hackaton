@@ -4,6 +4,10 @@
   position: relative;
 }
 
+.header {
+  height: 50px;
+}
+
 .currency-image {
   max-height: 50px;
 }
@@ -19,7 +23,6 @@
   font-weight: bold;
 }
 
-
 .wallet{
   margin-left: 10px;
   font-weight: bold;
@@ -31,3 +34,12 @@
   color: black;
 }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  button {
+    width: 30%;
+  }
+}
