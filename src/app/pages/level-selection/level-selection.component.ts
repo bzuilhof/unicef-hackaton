@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
-import {MatDialog } from '@angular/material/dialog';
+import {Component, OnInit} from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
 import {SituationPopupComponent} from '../situation-popup/situation-popup.component';
-
 
 @Component({
   selector: 'app-level-selection',
@@ -12,7 +10,6 @@ import {SituationPopupComponent} from '../situation-popup/situation-popup.compon
 export class LevelSelectionComponent implements OnInit {
 
   constructor(
-    private router: Router,
     public dialog: MatDialog
   ) {
   }
