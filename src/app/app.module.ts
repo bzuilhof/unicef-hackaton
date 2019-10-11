@@ -12,6 +12,7 @@ import {StageStoreComponent} from './pages/stage/stage-store/stage-store.compone
 import {SituationPopupComponent} from './pages/situation-popup/situation-popup.component';
 import {MatDialog, MatDialogModule} from '@angular/material';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { BuyCoinsComponent } from './pages/stage/buy-coins/buy-coins.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
     StageViewComponent,
     StageStoreComponent,
     SituationPopupComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    BuyCoinsComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
     MatDialog
   ],
   entryComponents: [
-    SituationPopupComponent
+    SituationPopupComponent,
+    BuyCoinsComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,11 @@
 <div class="field">
-  <button (click)="toggleStore()" class="button">{{openStore ? 'Close store' : 'Open store'}}</button><div class="wallet float-right">{{currency}} x<img src="assets/images/{{currencyImage}}" class="currency-image" alt="image"></div>
+  <div class="header">
+    <button (click)="toggleStore()" class="button">{{openStore ? 'Close store' : 'Open store'}}</button>
+    <div class="wallet float-right">{{currency}} x<img src="assets/images/{{currencyImage}}" class="currency-image" alt="image"></div>
+    <div class="wallet float-right" (click)="buyCoins()">{{coin_currency}} x<img src="../../../assets/images/unicefcoin.png" class="currency-image" alt="image"></div>
+  </div>
   <app-stage-view *ngIf="!openStore; else store" (increase)="increaseCurrency()"></app-stage-view>
+
   <ng-template #store>
     <app-stage-store
       (purchase)="commitPurchase($event)"

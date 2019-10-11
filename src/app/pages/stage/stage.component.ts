@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import Inventory from '../../models/inventory';
+import {Component, OnInit} from '@angular/core';
 import PurchaseEvent from '../../models/PurchaseEvent';
+import {MatDialog} from '@angular/material';
+import {BuyCoinsComponent} from './buy-coins/buy-coins.component';
+import Deal from '../../models/deal';
 import Upgrade from '../../models/Upgrade';
 import Facility from '../../models/Facility';
 
@@ -11,6 +13,7 @@ import Facility from '../../models/Facility';
 })
 export class StageComponent implements OnInit {
 
+  coin_currency = 0;
   currency = 0;
   currencyImage = 'drop.png';
   increment = 1;
@@ -31,7 +34,9 @@ export class StageComponent implements OnInit {
 
   openStore = false;
 
-  constructor() { }
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit() {
   }
@@ -62,5 +67,16 @@ export class StageComponent implements OnInit {
     }
     this.currency -= purchaseEvent.cost;
 
+  }
+
+  private buyCoins() {
+    let dialog = this.dialog.open(BuyCoinsComponent, {
+      width: '80%',
+    });
+    dialog.afterClosed().subscribe((deal: Deal) => {
+      if (deal && deal.coins) {
+        this.coin_currency += deal.coins;
+      }
+    })
   }
 }

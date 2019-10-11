@@ -1,0 +1,8 @@
+<h2>Koop meer UNICEF coins</h2>
+<p>100% van de opbrengsten gaan naar UNICEF</p>
+
+<button *ngFor="let deal of deals" (click)="buy(deal)">
+  {{ deal.coins }}
+  <img src="../../../assets/images/unicefcoin.png" class="currency-image">
+  <div class="float-right">€ {{ deal.price }}</div>
+</button>
