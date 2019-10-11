@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Inventory from '../../models/inventory';
+import PurchaseEvent from '../../models/PurchaseEvent';
 
 @Component({
   selector: 'app-stage',
@@ -9,14 +11,35 @@ export class StageComponent implements OnInit {
 
   currency = 0;
   currencyImage = 'drop.png';
-  assetImage = 'pump.jpg';
+  increment = 1;
+
+  inventory: Inventory = {
+    pumpServants: 0,
+    pumpUpgrades: 0
+  };
+
+  openStore = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  calcIncrement() {
+    this.increment = this.inventory.pumpServants * 2 + this.inventory.pumpUpgrades * 10;
+  }
+
+  toggleStore() {
+    this.openStore = !this.openStore;
+  }
+
   increaseCurrency() {
-    this.currency++;
+    this.currency += this.increment;
+  }
+
+  commitPurchase(purchaseEvent: PurchaseEvent) {
+    this.currency -= purchaseEvent.cost;
+    this.inventory[purchaseEvent.upgradeType]++;
+    this.calcIncrement();
   }
 }

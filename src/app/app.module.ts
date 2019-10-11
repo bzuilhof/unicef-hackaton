@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { LevelSelectionComponent } from './pages/level-selection/level-selection.component';
 import { StageComponent } from './pages/stage/stage.component';
 import { EarthComponent } from './pages/earth/earth.component';
+import { StageViewComponent } from './pages/stage/stage-view/stage-view.component';
+import { StageStoreComponent } from './pages/stage/stage-store/stage-store.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LevelSelectionComponent,
     StageComponent,
-    EarthComponent
+    EarthComponent,
+    StageViewComponent,
+    StageStoreComponent
   ],
   imports: [
     BrowserModule,
