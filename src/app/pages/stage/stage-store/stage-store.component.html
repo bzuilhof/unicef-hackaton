@@ -1,24 +1,50 @@
 <table class="table table-hover">
   <thead>
+    <tr>
+      <th>Upgrade</th>
+      <th>Owned</th>
+      <th>Cost</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let upgrade of upgrades">
+      <td>{{upgrade.name}}</td>
+      <td>{{upgrade.owned}}</td>
+      <td>{{currentPrice(upgrade.initialPrice, upgrade.owned)}}</td>
+      <td>
+        <button
+          class="btn btn-sm btn-secondary"
+          (click)="commitPurchase(currentPrice(upgrade.initialPrice, upgrade.owned), upgrade.name)"
+          [disabled]="currency < currentPrice(upgrade.initialPrice, upgrade.owned)"
+        >
+          <i class="fas fa-plus"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+  <thead>
   <tr>
-    <th>Upgrade</th>
+    <th>Facility</th>
     <th>Owned</th>
     <th>Cost</th>
     <th></th>
   </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Pump servant</td>
-      <td>{{inventory.pumpServants}}</td>
-      <td>10</td>
-      <td><button class="btn btn-sm btn-secondary" [ngClass]="{'disabled': currency < 10}" (click)="commitPurchase(10, 'pumpServants')" [disabled]="currency < 10"><i class="fas fa-plus"></i></button></td>
-    </tr>
-    <tr>
-      <td>Pump upgrade</td>
-      <td>{{inventory.pumpUpgrades}}</td>
-      <td>20</td>
-      <td><button class="btn btn-sm btn-secondary" [ngClass]="{'disabled': currency < 20}" (click)="commitPurchase(20, 'pumpUpgrades')" [disabled]="currency < 20"><i class="fas fa-plus"></i></button></td>
+    <tr *ngFor="let facility of facilities">
+      <td>{{facility.name}}</td>
+      <td>{{facility.owned}}</td>
+      <td>{{currentPrice(facility.initialPrice, facility.owned)}}</td>
+      <td>
+        <button
+          class="btn btn-sm btn-secondary"
+          (click)="commitPurchase(currentPrice(facility.initialPrice, facility.owned), facility.name)"
+          [disabled]="currency < currentPrice(facility.initialPrice, facility.owned)"
+        >
+          <i class="fas fa-plus"></i>
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
