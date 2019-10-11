@@ -36,8 +36,8 @@ export class StageComponent implements OnInit {
   openStore = false;
 
   constructor(
-    public dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -106,8 +106,11 @@ export class StageComponent implements OnInit {
       }
     });
   }
+  private onBackPressed() {
+    this.router.navigateByUrl('level-selection');
+  }
 
   private goToExpedition() {
-    this.router.navigateByUrl('expedition')
+    this.router.navigateByUrl('expedition');
   }
 }

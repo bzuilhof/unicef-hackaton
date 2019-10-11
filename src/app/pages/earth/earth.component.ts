@@ -26,4 +26,7 @@ export class EarthComponent implements OnInit {
     this.zoomEarth = true;
     this.router.navigateByUrl('level-selection');
   }
+  private onBackPressed() {
+    this.router.navigateByUrl('');
+  }
 }

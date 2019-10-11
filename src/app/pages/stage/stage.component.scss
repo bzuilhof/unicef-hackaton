@@ -5,7 +5,7 @@
 }
 
 .header {
-  height: 50px;
+  height: 60px;
 }
 
 .currency-image {
@@ -21,6 +21,10 @@
   padding: 10px 20px;
   font-size: 18px;
   font-weight: bold;
+  &__back-button{
+    width: 52px;
+    margin: 5px;
+  }
 }
 
 .wallet{

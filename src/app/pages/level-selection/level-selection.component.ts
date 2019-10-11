@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {SituationPopupComponent} from '../situation-popup/situation-popup.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-level-selection',
@@ -10,6 +11,7 @@ import {SituationPopupComponent} from '../situation-popup/situation-popup.compon
 export class LevelSelectionComponent implements OnInit {
 
   constructor(
+    private router: Router,
     public dialog: MatDialog
   ) {
   }
@@ -19,11 +21,15 @@ export class LevelSelectionComponent implements OnInit {
   }
 
   goToLevel(level) {
-    let dialog = this.dialog.open(SituationPopupComponent, {
+    const dialog = this.dialog.open(SituationPopupComponent, {
       // height: '400px',
       width: '80%',
       data: {situation: level}
     });
+  }
+
+  private onBackPressed() {
+    this.router.navigateByUrl('earth');
   }
 
 }
