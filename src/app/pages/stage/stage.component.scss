@@ -1,9 +1,24 @@
 .field {
-  background-color: burlywood;
+  background: url("../../../assets/images/sand.jpg") repeat;
   height: 100vh;
 }
 
 .currency-image {
-  max-height: 30px;
+  max-height: 50px;
+}
 
+.button{
+  background: #FFFFFF;
+  color: #00AFEC;
+  margin: 5px;
+  border-radius: 50px;
+  outline: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.wallet{
+  font-weight: bold;
+  font-size: 18px;
 }
