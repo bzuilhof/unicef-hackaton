@@ -12,7 +12,7 @@ import Facility from '../../models/Facility';
   styleUrls: ['./stage.component.scss']
 })
 export class StageComponent implements OnInit {
-  coin_currency = 0;
+  coinCurrency = 0;
   currency = 0;
   currencyImage = 'drop.png';
   increment = 1;
@@ -95,13 +95,13 @@ export class StageComponent implements OnInit {
   }
 
   private buyCoins() {
-    let dialog = this.dialog.open(BuyCoinsComponent, {
+    const dialog = this.dialog.open(BuyCoinsComponent, {
       width: '80%',
     });
     dialog.afterClosed().subscribe((deal: Deal) => {
       if (deal && deal.coins) {
-        this.coin_currency += deal.coins;
+        this.coinCurrency += deal.coins;
       }
-    })
+    });
   }
 }
