@@ -1,0 +1,24 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Upgrade</th>
+    <th>Owned</th>
+    <th>Cost</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Pump servant</td>
+      <td>{{inventory.pumpServants}}</td>
+      <td>10</td>
+      <td><button class="btn btn-sm btn-secondary" [ngClass]="{'disabled': currency < 10}" (click)="commitPurchase(10, 'pumpServants')" [disabled]="currency < 10"><i class="fas fa-plus"></i></button></td>
+    </tr>
+    <tr>
+      <td>Pump upgrade</td>
+      <td>{{inventory.pumpUpgrades}}</td>
+      <td>20</td>
+      <td><button class="btn btn-sm btn-secondary" [ngClass]="{'disabled': currency < 20}" (click)="commitPurchase(20, 'pumpUpgrades')" [disabled]="currency < 20"><i class="fas fa-plus"></i></button></td>
+    </tr>
+  </tbody>
+</table>

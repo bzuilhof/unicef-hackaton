@@ -7,13 +7,17 @@ import { LevelSelectionComponent } from './pages/level-selection/level-selection
 import { StageComponent } from './pages/stage/stage.component';
 import { EarthComponent } from './pages/earth/earth.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { StageViewComponent } from './pages/stage/stage-view/stage-view.component';
+import { StageStoreComponent } from './pages/stage/stage-store/stage-store.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LevelSelectionComponent,
     StageComponent,
-    EarthComponent
+    EarthComponent,
+    StageViewComponent,
+    StageStoreComponent
   ],
   imports: [
     BrowserModule,

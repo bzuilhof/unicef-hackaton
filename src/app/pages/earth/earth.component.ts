@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {fadeIn, zoomIn, zoomInX, zoomOut} from 'ng-animate';
 import {animate, state, style, transition, trigger, useAnimation} from '@angular/animations';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-earth',
@@ -16,12 +17,13 @@ export class EarthComponent implements OnInit {
   fade: any;
   zoom: any;
   public zoomEarth = false;
-  constructor() { }
+  constructor(private router: Router) {}
 
   ngOnInit() {
   }
 
   private clicked() {
     this.zoomEarth = true;
+    this.router.navigateByUrl('level-selection');
   }
 }
