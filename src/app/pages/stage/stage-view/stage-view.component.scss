@@ -1,0 +1,11 @@
+.stage-field{
+  width: 100vw;
+  text-align: center;
+}
+.pump {
+  width: auto;
+  margin-top: 150px;
+  &__tapped{
+    width: 50%;
+  }
+}

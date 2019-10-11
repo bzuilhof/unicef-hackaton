@@ -7,7 +7,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class StageViewComponent implements OnInit {
 
-  assetImage = 'pump.jpg';
+  assetImage = 'waterput.png';
+  isClicked = false;
 
   @Output() increase: EventEmitter<any> = new EventEmitter();
 
@@ -16,6 +17,7 @@ export class StageViewComponent implements OnInit {
   }
 
   increaseCurrency() {
+    this.isClicked = false;
     this.increase.emit();
   }
 }
