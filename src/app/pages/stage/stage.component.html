@@ -24,7 +24,11 @@
 
       <br>{{openStore ? 'TERUG' : 'WINKEL'}}
     </button>
-    <button class="button"><i class="fas fa-city"></i>BOEDEL</button>
-    <button class="button"><i class="fas fa-puzzle-piece"></i>EXPEDITIE</button>
+    <button class="button">
+      <i class="fas fa-city"></i>BOEDEL
+    </button>
+    <button class="button" (click)="goToExpedition()">
+      <i class="fas fa-puzzle-piece"></i>EXPEDITIE
+    </button>
   </div>
 </div>

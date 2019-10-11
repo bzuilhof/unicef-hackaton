@@ -5,6 +5,7 @@ import {BuyCoinsComponent} from './buy-coins/buy-coins.component';
 import Deal from '../../models/deal';
 import Upgrade from '../../models/Upgrade';
 import Facility from '../../models/Facility';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-stage',
@@ -35,7 +36,8 @@ export class StageComponent implements OnInit {
   openStore = false;
 
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -103,5 +105,9 @@ export class StageComponent implements OnInit {
         this.coinCurrency += deal.coins;
       }
     });
+  }
+
+  private goToExpedition() {
+    this.router.navigateByUrl('expedition')
   }
 }
