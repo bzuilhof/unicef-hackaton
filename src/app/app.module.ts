@@ -13,6 +13,7 @@ import {SituationPopupComponent} from './pages/situation-popup/situation-popup.c
 import {MatDialog, MatDialogModule} from '@angular/material';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { BuyCoinsComponent } from './pages/stage/buy-coins/buy-coins.component';
+import { ExpeditionComponent } from './pages/expedition/expedition.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { BuyCoinsComponent } from './pages/stage/buy-coins/buy-coins.component';
     SituationPopupComponent,
     LandingPageComponent,
     BuyCoinsComponent,
+    ExpeditionComponent,
   ],
   imports: [
     BrowserModule,
