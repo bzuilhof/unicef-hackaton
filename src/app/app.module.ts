@@ -8,6 +8,9 @@ import { StageComponent } from './pages/stage/stage.component';
 import { EarthComponent } from './pages/earth/earth.component';
 import { StageViewComponent } from './pages/stage/stage-view/stage-view.component';
 import { StageStoreComponent } from './pages/stage/stage-store/stage-store.component';
+import { SituationPopupComponent } from './pages/situation-popup/situation-popup.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialog, MatDialogModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,21 @@ import { StageStoreComponent } from './pages/stage/stage-store/stage-store.compo
     StageComponent,
     EarthComponent,
     StageViewComponent,
-    StageStoreComponent
+    StageStoreComponent,
+    SituationPopupComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [
+    MatDialog
+  ],
+  entryComponents: [
+    SituationPopupComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
