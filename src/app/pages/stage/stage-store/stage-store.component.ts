@@ -10,6 +10,7 @@ import Facility from '../../../models/Facility';
 export class StageStoreComponent implements OnInit {
 
   @Input() upgrades: Upgrade[];
+  @Input() autoClickerEnabled: boolean;
   @Input() facilities: Facility[];
   @Input() currency: number;
 
