@@ -14,10 +14,11 @@ import {Router} from '@angular/router';
 })
 export class StageComponent implements OnInit {
   coinCurrency = 0;
-  currency = 10000;
+  currency = 0;
   currencyImage = 'drop.png';
   increment = 1;
   xp = 0;
+  autoClickerEnabled = false;
 
   upgrades: Upgrade[] = [
     { name: 'Upgrade bucket', initialPrice: 10, levelRequired: 1, owned: 0 },
@@ -43,6 +44,11 @@ export class StageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+  }
+
+  private enableAutoClicker() {
+    setInterval(() => this.increaseCurrency(), 1000);
+    this.autoClickerEnabled = true;
   }
 
   getAvailableUpgrades() {
@@ -72,7 +78,9 @@ export class StageComponent implements OnInit {
   commitPurchase(purchaseEvent: PurchaseEvent) {
     const upgradeIndex = this.upgrades.findIndex((upgrade: Upgrade) => upgrade.name === purchaseEvent.upgradeType);
 
-    if (upgradeIndex !== -1) {
+    if (purchaseEvent.upgradeType === 'autoClicker') {
+      this.enableAutoClicker();
+    } else if (upgradeIndex !== -1) {
       this.upgrades[upgradeIndex].owned++;
       this.calcIncrement();
     } else {
