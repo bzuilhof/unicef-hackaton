@@ -15,6 +15,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { BuyCoinsComponent } from './pages/stage/buy-coins/buy-coins.component';
 import { ExpeditionComponent } from './pages/expedition/expedition.component';
 import { StageInventoryComponent } from './pages/stage/stage-inventory/stage-inventory.component';
+import { InviteFriendComponent } from './pages/invite-friend/invite-friend.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { StageInventoryComponent } from './pages/stage/stage-inventory/stage-inv
     BuyCoinsComponent,
     ExpeditionComponent,
     StageInventoryComponent,
+    InviteFriendComponent,
   ],
   imports: [
     BrowserModule,

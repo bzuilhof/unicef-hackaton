@@ -4,4 +4,8 @@
   <img [@fade]="fade" class="earth" src="../../../assets/images/earth.png" alt="earth">
   </div>
   <img *ngIf="zoomEarth" class="earth" src="../../../assets/images/earth.png" alt="earth">
+  <div class="footer">
+    <button class="button"><i class="fab fa-facebook"></i></button>
+    <button class="button" (click)="inviteClicked()" ><i class="fas fa-envelope"></i></button>
+  </div>
 </div>
