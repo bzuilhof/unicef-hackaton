@@ -15,6 +15,8 @@ export class StageStoreComponent implements OnInit {
 
   @Output() purchase: EventEmitter<any> = new EventEmitter();
 
+  private audio: HTMLAudioElement;
+
   constructor() { }
 
   ngOnInit() {
