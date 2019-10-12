@@ -15,6 +15,11 @@ export class ExpeditionComponent implements OnInit {
   ngOnInit() {
   }
 
+  step = 1;
+
+  next() {
+    this.step++;
+  }
   goBack() {
     this.router.navigateByUrl('stage');
   }

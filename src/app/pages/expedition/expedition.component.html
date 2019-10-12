@@ -1,4 +1,10 @@
-<img
-  src="../../../assets/images/Expeditions.png"
-  (click)="goBack()"
->
+<div class="background">
+  <img *ngIf="step == 1"
+    src="../../../assets/images/Expeditions.png"
+    (click)="next()"
+  >
+  <img *ngIf="step == 2"
+       src="../../../assets/images/vraag.png"
+       (click)="goBack()"
+  >
+</div>
