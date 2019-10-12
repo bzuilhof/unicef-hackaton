@@ -1,6 +1,6 @@
 <div class="field">
   <div class="header">
-    <div *ngIf="!openStore" (click)="onBackPressed()" class="button button__back-button float-left"><img src="../../../assets/images/icon-arrow-left.svg"></div>
+    <div (click)="onBackPressed()" class="button button__back-button float-left"><img src="../../../assets/images/icon-arrow-left.svg"></div>
     <div class="wallet float-right">{{currency}} x<img src="assets/images/{{currencyImage}}" class="currency-image" alt="image"></div>
     <div class="wallet float-right" (click)="buyCoins()">{{coinCurrency}} x<img src="../../../assets/images/unicefcoin.png" class="currency-image" alt="image"></div>
   </div>
@@ -8,31 +8,27 @@
     <div class="progress-bar bg-unicef" role="progressbar" [ngStyle]="{'width.%': getProgress()}">Level {{getLevel()}}</div>
   </div>
   <div class="level-name-container">
-    <p class="level-name-p">Syrië</p>
+    <p *ngIf="screen === 'view'" class="level-name-p">Syrië</p>
   </div>
-  <app-stage-view *ngIf="!openStore; else store" (increase)="increaseCurrency()"></app-stage-view>
+  <app-stage-view *ngIf="screen === 'view'" (increase)="increaseCurrency()"></app-stage-view>
 
-  <ng-template #store>
-    <app-stage-store
-      (purchase)="commitPurchase($event)"
-      [currency]="currency"
-      [facilities]="getAvailableFacilities()"
-      [upgrades]="getAvailableUpgrades()"
-    ></app-stage-store>
-  </ng-template>
+  <app-stage-store *ngIf="screen === 'store'"
+    (purchase)="commitPurchase($event)"
+    [currency]="currency"
+    [facilities]="getAvailableFacilities()"
+    [upgrades]="getAvailableUpgrades()"
+  ></app-stage-store>
+
+  <app-stage-inventory *ngIf="screen === 'inventory'" [facilities]="facilityInventory"></app-stage-inventory>
 
   <div class="footer">
-    <button (click)="toggleStore()" class="button">
-      <i *ngIf="!openStore" class="fas fa-shopping-cart"></i>
-      <i *ngIf="openStore" class="fas fa-arrow-left"></i>
-
-      <br>{{openStore ? 'TERUG' : 'WINKEL'}}
+    <button (click)="toggleScreen('store')" class="button" [disabled]="screen==='store'">
+      <i class="fas fa-shopping-cart"></i>
+      <br>WINKEL
     </button>
-    <button class="button">
-      <i class="fas fa-city"></i>BOEDEL
-    </button>
-    <button class="button" (click)="goToExpedition()">
+     <button class="button" (click)="goToExpedition()">
       <i class="fas fa-puzzle-piece"></i>EXPEDITIE
     </button>
+    <button (click)="toggleScreen('inventory')" class="button"  [disabled]="screen==='inventory'"><i class="fas fa-city"></i>BOEDEL</button>
   </div>
 </div>
