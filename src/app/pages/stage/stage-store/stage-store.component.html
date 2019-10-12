@@ -25,7 +25,9 @@
     <tr *ngFor="let upgrade of upgrades">
       <td class="text-color">{{upgrade.name}}</td>
       <td class="text-color">{{upgrade.owned}}</td>
-      <td class="text-color">{{currentPrice(upgrade.initialPrice, upgrade.owned)}}</td>
+      <td class="text-color">{{currentPrice(upgrade.initialPrice, upgrade.owned)}}
+        <img *ngIf="upgrade.name === 'Upgrade dak'" height="20" src="../../../../assets/images/unicefcoin.png">
+      </td>
       <td>
         <button
           class="btn btn-sm btn-secondary"
@@ -49,7 +51,9 @@
     <tr *ngFor="let facility of facilities">
       <td class="text-color">{{facility.name}}</td>
       <td class="text-color">{{facility.owned}}</td>
-      <td class="text-color">{{currentPrice(facility.initialPrice, facility.owned)}}</td>
+      <td class="text-color">{{currentPrice(facility.initialPrice, facility.owned)}}
+        <img *ngIf="facility.name === 'Kinderdagverblijf'" height="20" src="../../../../assets/images/unicefcoin.png">
+      </td>
       <td>
         <button
           class="btn btn-sm btn-secondary"

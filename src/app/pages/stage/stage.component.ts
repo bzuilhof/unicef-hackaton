@@ -24,14 +24,14 @@ export class StageComponent implements OnInit {
     { name: 'Upgrade emmer', initialPrice: 10, levelRequired: 1, owned: 0 },
     { name: 'Upgrade touw', initialPrice: 20, levelRequired: 2, owned: 0 },
     { name: 'Upgrade stenen', initialPrice: 50, levelRequired: 3, owned: 0 },
-    { name: 'Upgrade dak', initialPrice: 100, levelRequired: 4, owned: 0 },
+    { name: 'Upgrade dak', initialPrice: 2, levelRequired: 1, owned: 0 },
   ];
 
   facilities: Facility[] = [
     { name: 'Ziekenhuis', initialPrice: 10, levelRequired: 1, owned: 0 },
     { name: 'School', initialPrice: 20, levelRequired: 2, owned: 0 },
     { name: 'Water voorziening', initialPrice: 50, levelRequired: 3, owned: 0 },
-    { name: 'Kinderdagverblijf', initialPrice: 100, levelRequired: 4, owned: 0 },
+    { name: 'Kinderdagverblijf', initialPrice: 10, levelRequired: 2, owned: 0 },
   ];
 
   facilityInventory: string[] = [];
