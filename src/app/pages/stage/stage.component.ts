@@ -30,8 +30,8 @@ export class StageComponent implements OnInit {
   facilities: Facility[] = [
     { name: 'Ziekenhuis', initialPrice: 10, levelRequired: 1, owned: 0 },
     { name: 'School', initialPrice: 20, levelRequired: 2, owned: 0 },
-    { name: 'water voorziening', initialPrice: 50, levelRequired: 3, owned: 0 },
-    { name: 'Daycare', initialPrice: 100, levelRequired: 4, owned: 0 },
+    { name: 'Water voorziening', initialPrice: 50, levelRequired: 3, owned: 0 },
+    { name: 'Kinderdagverblijf', initialPrice: 100, levelRequired: 4, owned: 0 },
   ];
 
   facilityInventory: string[] = [];
