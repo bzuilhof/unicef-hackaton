@@ -1,4 +1,9 @@
 <div class = "stage-field">
+  <img *ngIf="dropSprite1" class='drop drop__right' [@rotateOutUpRight]='rotateOutUpRight' src="../../../assets/images/drop.png">
+  <img *ngIf="dropSprite2" class='drop drop__top-right' [@rotateOutUpRight]='rotateOutUpRight' src="../../../assets/images/drop.png">
+  <img *ngIf="dropSprite3" class='drop drop__top' [@rotateOutUpLeft]='rotateOutUpLeft' src="../../../assets/images/drop.png">
+  <img *ngIf="dropSprite4" class='drop drop__top-left' [@rotateOut]='rotateOut' src="../../../assets/images/drop.png">
+  <img *ngIf="dropSprite5" class='drop drop__left' [@rotateOut]='rotateOut' src="../../../assets/images/drop.png">
   <div *ngIf="playAnimation === 1">
   <img  *ngIf="playAnimation === 1" [@jello]="jello" (click)="increaseCurrency()" src="assets/images/{{assetImage}}" class="pump">
   </div>

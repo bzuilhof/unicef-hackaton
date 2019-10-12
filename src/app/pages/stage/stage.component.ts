@@ -14,7 +14,7 @@ import {Router} from '@angular/router';
 })
 export class StageComponent implements OnInit {
   coinCurrency = 0;
-  currency = 0;
+  currency = 34749;
   currencyImage = 'drop.png';
   increment = 1;
   xp = 0;

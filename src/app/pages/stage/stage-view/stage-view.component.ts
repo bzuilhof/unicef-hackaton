@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import {jello, rubberBand, shake} from 'ng-animate';
+import {rotateOutUpRight, jello, rubberBand, shake, rotateOut, rotateOutUpLeft} from 'ng-animate';
 import {transition, trigger, useAnimation} from '@angular/animations';
 
 @Component({
@@ -9,7 +9,16 @@ import {transition, trigger, useAnimation} from '@angular/animations';
   animations: [
     trigger('jello', [transition('* => *', useAnimation(jello))]),
     trigger('rubberBand', [transition('* => *', useAnimation(rubberBand))]),
-    trigger('shake', [transition('* => *', useAnimation(shake))])
+    trigger('shake', [transition('* => *', useAnimation(shake))]),
+    trigger('rotateOutUpRight', [transition('* => *', useAnimation(rotateOutUpRight, {
+      params: { timing: 1}
+    }))]),
+    trigger('rotateOutUpLeft', [transition('* => *', useAnimation(rotateOutUpLeft, {
+      params: { timing: 1}
+    }))]),
+    trigger('rotateOut', [transition('* => *', useAnimation(rotateOutUpLeft, {
+      params: { timing: 1}
+    }))]),
   ],
 })
 export class StageViewComponent implements OnInit {
@@ -22,6 +31,14 @@ export class StageViewComponent implements OnInit {
   drop2: any;
   drop3: any;
   drop4: any;
+  rotateOutUpRight: any;
+  rotateOutUpLeft: any;
+  rotateOut: any;
+  dropSprite1 = false;
+  dropSprite2 = false;
+  dropSprite3 = false;
+  dropSprite4 = false;
+  dropSprite5 = false;
 
   @Output() increase: EventEmitter<any> = new EventEmitter();
 
@@ -36,6 +53,7 @@ export class StageViewComponent implements OnInit {
     if (this.playAnimation === 4) {
       this.playAnimation = 1;
     }
+    this.splash();
     this.playRandomAudio();
   }
 
@@ -56,6 +74,42 @@ export class StageViewComponent implements OnInit {
         break;
     }
 
+  }
+
+  private splash() {
+    const randomNum = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+    switch (randomNum) {
+      case 1:
+        this.dropSprite1 = true;
+        setTimeout( () => {
+          this.dropSprite1 = false;
+        }, 5);
+        break;
+      case 2:
+        this.dropSprite2 = true;
+        setTimeout( () => {
+          this.dropSprite2 = false;
+        }, 5);
+        break;
+      case 3:
+        this.dropSprite3 = true;
+        setTimeout( () => {
+          this.dropSprite3 = false;
+        }, 5);
+        break;
+      case 4:
+        this.dropSprite4 = true;
+        setTimeout( () => {
+          this.dropSprite4 = false;
+        }, 5);
+        break;
+      case 5:
+        this.dropSprite5 = true;
+        setTimeout( () => {
+          this.dropSprite5 = false;
+        }, 5);
+        break;
+    }
   }
 
   private loadAudio() {

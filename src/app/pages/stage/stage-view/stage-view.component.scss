@@ -9,3 +9,27 @@
     width: 50%;
   }
 }
+.drop{
+  z-index: 10;
+  position: absolute;
+  width: 50px;
+  &__right{
+    bottom: 350px;
+    right: 75px;
+  }
+  &__top-right{
+    top: 380px;
+    right: 100px;
+  }
+  &__top{
+    top: 350px;
+  }
+  &__left{
+    bottom: 350px;
+    left: 75px;
+  }
+  &__top-left{
+    top: 380px;
+    left: 100px;
+  }
+}
