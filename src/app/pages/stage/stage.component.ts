@@ -14,7 +14,7 @@ import {Router} from '@angular/router';
 })
 export class StageComponent implements OnInit {
   coinCurrency = 0;
-  currency = 0;
+  currency = 10000;
   currencyImage = 'drop.png';
   increment = 1;
   xp = 0;
@@ -33,7 +33,9 @@ export class StageComponent implements OnInit {
     { name: 'Daycare', initialPrice: 100, levelRequired: 4, owned: 0 },
   ];
 
-  openStore = false;
+  facilityInventory: string[] = [];
+
+  screen = 'view';
 
   constructor(
     private router: Router,
@@ -59,8 +61,8 @@ export class StageComponent implements OnInit {
     this.increment = newIncrement;
   }
 
-  private toggleStore() {
-    this.openStore = !this.openStore;
+  private toggleScreen(screen: string) {
+    this.screen = screen;
   }
 
   private increaseCurrency() {
@@ -77,6 +79,7 @@ export class StageComponent implements OnInit {
       const facilityIndex  = this.facilities.findIndex((facility: Facility) => facility.name === purchaseEvent.upgradeType);
       this.facilities[facilityIndex].owned++;
       this.xp += this.facilities[facilityIndex].initialPrice;
+      this.facilityInventory.push(purchaseEvent.upgradeType);
     }
     this.currency -= purchaseEvent.cost;
   }
@@ -106,8 +109,13 @@ export class StageComponent implements OnInit {
       }
     });
   }
+
   private onBackPressed() {
-    this.router.navigateByUrl('level-selection');
+    if (this.screen === 'view') {
+      this.router.navigateByUrl('level-selection');
+    } else {
+      this.screen = 'view';
+    }
   }
 
   private goToExpedition() {

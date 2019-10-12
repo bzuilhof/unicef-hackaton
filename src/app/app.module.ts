@@ -14,6 +14,7 @@ import {MatDialog, MatDialogModule} from '@angular/material';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { BuyCoinsComponent } from './pages/stage/buy-coins/buy-coins.component';
 import { ExpeditionComponent } from './pages/expedition/expedition.component';
+import { StageInventoryComponent } from './pages/stage/stage-inventory/stage-inventory.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ExpeditionComponent } from './pages/expedition/expedition.component';
     LandingPageComponent,
     BuyCoinsComponent,
     ExpeditionComponent,
+    StageInventoryComponent,
   ],
   imports: [
     BrowserModule,
