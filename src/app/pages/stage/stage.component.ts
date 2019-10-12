@@ -21,16 +21,16 @@ export class StageComponent implements OnInit {
   autoClickerEnabled = false;
 
   upgrades: Upgrade[] = [
-    { name: 'Upgrade bucket', initialPrice: 10, levelRequired: 1, owned: 0 },
-    { name: 'Upgrade rope', initialPrice: 20, levelRequired: 2, owned: 0 },
-    { name: 'Upgrade stones', initialPrice: 50, levelRequired: 3, owned: 0 },
-    { name: 'Upgrade roof', initialPrice: 100, levelRequired: 4, owned: 0 },
+    { name: 'Upgrade emmer', initialPrice: 10, levelRequired: 1, owned: 0 },
+    { name: 'Upgrade touw', initialPrice: 20, levelRequired: 2, owned: 0 },
+    { name: 'Upgrade stenen', initialPrice: 50, levelRequired: 3, owned: 0 },
+    { name: 'Upgrade dak', initialPrice: 100, levelRequired: 4, owned: 0 },
   ];
 
   facilities: Facility[] = [
-    { name: 'Hospital', initialPrice: 10, levelRequired: 1, owned: 0 },
+    { name: 'Ziekenhuis', initialPrice: 10, levelRequired: 1, owned: 0 },
     { name: 'School', initialPrice: 20, levelRequired: 2, owned: 0 },
-    { name: 'Water facility', initialPrice: 50, levelRequired: 3, owned: 0 },
+    { name: 'water voorziening', initialPrice: 50, levelRequired: 3, owned: 0 },
     { name: 'Daycare', initialPrice: 100, levelRequired: 4, owned: 0 },
   ];
 

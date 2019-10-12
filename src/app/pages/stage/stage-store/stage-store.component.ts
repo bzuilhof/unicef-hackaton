@@ -8,7 +8,6 @@ import Facility from '../../../models/Facility';
   styleUrls: ['./stage-store.component.scss']
 })
 export class StageStoreComponent implements OnInit {
-
   @Input() upgrades: Upgrade[];
   @Input() autoClickerEnabled: boolean;
   @Input() facilities: Facility[];
@@ -23,6 +22,10 @@ export class StageStoreComponent implements OnInit {
 
   commitPurchase(cost: number, upgradeType: string) {
     this.purchase.emit({cost, upgradeType});
+    this.audio = new Audio();
+    this.audio.src = 'assets/sounds/kassa.mp3';
+    this.audio.load();
+    this.audio.play();
   }
 
   currentPrice(intialPrice: number, owned: number) {

@@ -1,17 +1,17 @@
-<table class="table table-hover">
+<table class="shop_container table table-hover">
   <thead>
     <tr>
-      <th>Upgrade</th>
-      <th>Owned</th>
-      <th>Cost</th>
+      <th class="text-color">Upgrade</th>
+      <th class="text-color">In Bezit</th>
+      <th class="text-color">Kosten</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngIf="!autoClickerEnabled">
-      <td>Autoclicker</td>
-      <td>0</td>
-      <td>10000</td>
+      <td class="text-color">Automatische klikker</td>
+      <td class="text-color">0</td>
+      <td class="text-color">10000</td>
       <td>
         <button
         class="btn btn-sm btn-secondary"
@@ -23,9 +23,9 @@
       </td>
     </tr>
     <tr *ngFor="let upgrade of upgrades">
-      <td>{{upgrade.name}}</td>
-      <td>{{upgrade.owned}}</td>
-      <td>{{currentPrice(upgrade.initialPrice, upgrade.owned)}}</td>
+      <td class="text-color">{{upgrade.name}}</td>
+      <td class="text-color">{{upgrade.owned}}</td>
+      <td class="text-color">{{currentPrice(upgrade.initialPrice, upgrade.owned)}}</td>
       <td>
         <button
           class="btn btn-sm btn-secondary"
@@ -39,17 +39,17 @@
   </tbody>
   <thead>
   <tr>
-    <th>Facility</th>
-    <th>Owned</th>
-    <th>Cost</th>
-    <th></th>
+    <th class="text-color">Facility</th>
+    <th class="text-color">Owned</th>
+    <th class="text-color">Cost</th>
+    <th class="text-color"></th>
   </tr>
   </thead>
   <tbody>
     <tr *ngFor="let facility of facilities">
-      <td>{{facility.name}}</td>
-      <td>{{facility.owned}}</td>
-      <td>{{currentPrice(facility.initialPrice, facility.owned)}}</td>
+      <td class="text-color">{{facility.name}}</td>
+      <td class="text-color">{{facility.owned}}</td>
+      <td class="text-color">{{currentPrice(facility.initialPrice, facility.owned)}}</td>
       <td>
         <button
           class="btn btn-sm btn-secondary"
