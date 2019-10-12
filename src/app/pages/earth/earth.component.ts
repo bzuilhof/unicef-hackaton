@@ -29,4 +29,8 @@ export class EarthComponent implements OnInit {
   private onBackPressed() {
     this.router.navigateByUrl('');
   }
+
+  inviteClicked() {
+    this.router.navigateByUrl('invite');
+  }
 }

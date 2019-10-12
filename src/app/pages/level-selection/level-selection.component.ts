@@ -16,7 +16,6 @@ export class LevelSelectionComponent implements OnInit {
   ) {
   }
 
-
   ngOnInit() {
   }
 
@@ -28,8 +27,7 @@ export class LevelSelectionComponent implements OnInit {
     });
   }
 
-  private onBackPressed() {
+  onBackPressed() {
     this.router.navigateByUrl('earth');
   }
-
 }
